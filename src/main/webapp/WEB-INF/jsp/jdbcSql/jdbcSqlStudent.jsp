@@ -12,9 +12,9 @@
     // 获取请求的上下文
     String context = request.getContextPath();
 %>
-<link href='<c:url value="/WEB-INF/css/pagination.css"></c:url>' rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src='<c:url value="/WEB-INF/js/jquery.pagination.js"></c:url>'></script>
-<script type="text/javascript" src='<c:url value="/WEB-INF/js/jquery-1.11.3.js"></c:url>'></script>>>
+<link href='<c:url value="/css/pagination.css"></c:url>' rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src='<c:url value="/js/jquery-1.11.3.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/js/jquery.pagination.js"></c:url>'></script>
 
 
 
@@ -22,7 +22,7 @@
 
     // 点击分页按钮以后触发的动作
     function handlePaginationClick(new_page_index, pagination_container) {
-        $("#stuForm").attr("action", "<%=context %>/jdbcSql/JdbcSqlServlet?pageNum=" + (new_page_index + 1));
+        $("#stuForm").attr("action", "<%=context %>/mvc/page.do?pageNum=" + (new_page_index + 1));
         $("#stuForm").submit();
         return false;
     }
