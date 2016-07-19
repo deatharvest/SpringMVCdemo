@@ -4,6 +4,7 @@ package dao;
 import model.Constant;
 import model.Pager;
 import model.Student;
+import org.springframework.stereotype.Repository;
 import util.JdbcUtil;
 
 import java.sql.SQLException;
@@ -18,6 +19,7 @@ import java.util.Map;
  * @author lenjey
  * 
  */
+@Repository("jdbcSqlStudentDao")
 public class JdbcSqlStudentDaoImpl implements StudentDao {
 
 	@Override

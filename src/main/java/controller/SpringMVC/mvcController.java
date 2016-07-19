@@ -4,6 +4,7 @@ import model.Constant;
 import model.Pager;
 import model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,9 +21,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 @RequestMapping("/mvc")
-public class mvcController {
+public class MvcController {
 
-    private StudentService studentService = new JdbcSqlStudentServiceImpl();
+    @Autowired
+    @Qualifier("jdbcSqlStudentService")
+    private StudentService studentService;
 
 
     @RequestMapping("/page")

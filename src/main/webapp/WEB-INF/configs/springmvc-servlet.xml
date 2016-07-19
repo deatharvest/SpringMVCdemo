@@ -14,22 +14,11 @@
 
 
     <!-- scan the package and the sub package -->
-    <context:component-scan base-package="service.*,controller.*"/>
-
-    <!-- don't handle the static resource -->
-    <mvc:default-servlet-handler />
+    <context:component-scan base-package="service,dao,controller"/>
 
     <!-- if you use annotation you must configure following setting -->
     <mvc:annotation-driven />
-
     <context:annotation-config />
-    
-    <context:component-scan base-package="java.*">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
-    </context:component-scan>
-
-
-
 
 
     <!-- configure the InternalResourceViewResolver -->

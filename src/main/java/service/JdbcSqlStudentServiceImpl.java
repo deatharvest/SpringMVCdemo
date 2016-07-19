@@ -1,18 +1,18 @@
 package service;
 
-
-import dao.JdbcSqlStudentDaoImpl;
 import dao.StudentDao;
 import model.Pager;
 import model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-@Service
+@Service("jdbcSqlStudentService")
 public class JdbcSqlStudentServiceImpl implements StudentService {
 
+	@Autowired
+	@Qualifier("jdbcSqlStudentDao")
 	private StudentDao studentDao;
-	public JdbcSqlStudentServiceImpl(){
-		studentDao = new JdbcSqlStudentDaoImpl();
-	}
+
 	@Override
 	public Pager<Student> findStudent(Student searchModel, int pageNum,
 									  int pageSize) {
