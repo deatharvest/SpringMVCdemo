@@ -5,10 +5,11 @@ import dao.JdbcSqlStudentDaoImpl;
 import dao.StudentDao;
 import model.Pager;
 import model.Student;
-
+import org.springframework.stereotype.Service;
+@Service
 public class JdbcSqlStudentServiceImpl implements StudentService {
+
 	private StudentDao studentDao;
-	
 	public JdbcSqlStudentServiceImpl(){
 		studentDao = new JdbcSqlStudentDaoImpl();
 	}

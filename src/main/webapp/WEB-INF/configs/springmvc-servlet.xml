@@ -14,7 +14,7 @@
 
 
     <!-- scan the package and the sub package -->
-    <context:component-scan base-package="controller.*"/>
+    <context:component-scan base-package="service.*,controller.*"/>
 
     <!-- don't handle the static resource -->
     <mvc:default-servlet-handler />
@@ -24,7 +24,7 @@
 
     <context:annotation-config />
     
-    <context:component-scan base-package="controller.*">
+    <context:component-scan base-package="java.*">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
 

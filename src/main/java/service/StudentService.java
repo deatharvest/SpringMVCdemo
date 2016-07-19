@@ -3,6 +3,7 @@ package service;
 
 import model.Pager;
 import model.Student;
+import org.springframework.stereotype.Service;
 
 public interface StudentService {
 
